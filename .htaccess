@@ -1,0 +1,10 @@
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /ProiectCI/
+
+RewriteCond %(REQUEST_FILENAME) !-f
+RewriteCond %(REQUEST_FILENAME) !-d
+RewriteCond $1 !^(index\.php|images|assets|assets/css|assets/js|assets/etc|robots\.txt)
+RewriteRule ^(.*)$ index.php?/$1 [L]
+</IfModule>
